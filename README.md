@@ -9,11 +9,6 @@ Users can search by city, see the **current weather**, and view a **multi‑day 
 
 - **Node.js** (LTS recommended)
 - **npm** (comes with Node) or **yarn**
-- **Expo** tooling:
-
-```bash
-npm install -g expo-cli
-```
 
 - A free **WeatherAPI** account and API key  
   Sign up and get a key here: `https://www.weatherapi.com/` (see their docs at `https://www.weatherapi.com/docs/`).
@@ -26,12 +21,6 @@ Run this from the project root:
 
 ```bash
 npm install
-```
-
-or
-
-```bash
-yarn
 ```
 
 ---
@@ -60,33 +49,15 @@ From the project root:
 #### Start the Expo dev server
 
 ```bash
-npm run start
+npx expo start --clear
 ```
 
-or
-
-```bash
-yarn start
-```
 
 You can then choose:
 
 - **Android emulator**  
 - **iOS simulator** (on macOS)  
 - **Physical device** using the Expo Go app  
-
-There are also convenience scripts:
-
-```bash
-# Android
-npm run android
-
-# iOS (macOS only)
-npm run ios
-
-# Web
-npm run web
-```
 
 ---
 
@@ -108,50 +79,3 @@ npm run web
 - **Graceful error handling** for invalid cities or network/API issues.
 
 ---
-
-### 6. Project structure (high level)
-
-- `app/`
-  - `_layout.tsx` – root layout using Expo Router.
-  - `index.tsx` – main weather screen (search, current weather, forecast list).
-  - `forecast/[date].tsx` – detail view for a specific forecast day.
-- `lib/`
-  - `weather-api.ts` – small typed wrapper around WeatherAPI (forecast + search).
-- `components/`
-  - Shared UI components (themed text/view, etc.).
-- `hooks/`
-  - Reusable hooks (e.g., color scheme, theme).
-
----
-
-### 7. Linting
-
-This project uses the Expo ESLint config.
-
-Run:
-
-```bash
-npm run lint
-```
-
-Fix any issues shown before pushing to production.
-
----
-
-### 8. Customization tips
-
-- **Change default city**: update the initial query/default city in the main screen/state logic (e.g., set to your city).
-- **Units**: currently shows °C; you can extend `lib/weather-api.ts` and the UI to support °F.
-- **Branding**: update colors, typography, and icons in the components to match your brand.
-
----
-
-### 9. Troubleshooting
-
-- **Blank data / API errors**
-  - Confirm your `.env` exists and `EXPO_PUBLIC_WEATHER_API_KEY` is correct.
-  - Check that your WeatherAPI plan allows the number of forecast days you are requesting.
-- **Changes to `.env` not applied**
-  - Stop the dev server and run `npm run start` again.
-- **Network issues**
-  - Ensure your device/emulator has internet access; WeatherAPI calls require it.
