@@ -79,3 +79,44 @@ You can then choose:
 - **Graceful error handling** for invalid cities or network/API issues.
 
 ---
+
+### 6. Building APK / iOS app with EAS
+
+To generate installable builds (APK / AAB for Android, IPA for iOS) using **Expo Application Services (EAS)**:
+
+1. **Log in to Expo**
+
+   ```bash
+   npx expo login
+   ```
+
+   or, if you have the EAS CLI installed globally:
+
+   ```bash
+   eas login
+   ```
+
+2. **Run EAS builds**
+
+   - Android:
+
+     ```bash
+     eas build --platform android
+     ```
+
+   - iOS:
+
+     ```bash
+     eas build --platform ios
+     ```
+
+   Follow the interactive prompts the first time to configure credentials.
+
+3. **Download the build from Expo**
+
+   - After the build finishes, the terminal will show a **build URL**.
+   - Open that link in your browser to the Expo build dashboard.
+   - From there you can download the generated **APK/AAB** for Android or the **IPA** for iOS and distribute or sideload as needed.
+
+For more options (profiles, app store submission, etc.), see the official EAS Build docs: `https://docs.expo.dev/build/introduction/`.
+
