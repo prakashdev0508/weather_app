@@ -112,7 +112,16 @@ To generate installable builds (APK / AAB for Android, IPA for iOS) using **Expo
 
    Follow the interactive prompts the first time to configure credentials.
 
-3. **Download the build from Expo**
+3. **esa.json file (for apk) :
+
+  Add comman in the development and production
+
+    ```bash
+      "distribution": "internal"
+    ```
+
+
+4. **Download the build from Expo**
 
    - After the build finishes, the terminal will show a **build URL**.
    - Open that link in your browser to the Expo build dashboard.

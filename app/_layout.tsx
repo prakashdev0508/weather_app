@@ -11,12 +11,12 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <SafeAreaView style={{ flex: 1 }} edges={['top', 'left', 'right']}>
           <Stack screenOptions={{ headerShown: false }} />
-          <StatusBar style="auto" />
+      <StatusBar style="auto" />
         </SafeAreaView>
-      </ThemeProvider>
+    </ThemeProvider>
     </SafeAreaProvider>
   );
 }
